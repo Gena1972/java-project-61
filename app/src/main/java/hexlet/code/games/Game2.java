@@ -14,7 +14,7 @@ public class Game2 {
         Engine.showTaskMessage("Answer 'yes' if the number is even, otherwise answer 'no'");
         while (Engine.roundCounter > 0) {
             playRound(maxValue);
-             }
+        }
         Engine.correctEndingGame(Engine.userName);
     }
 
@@ -30,12 +30,12 @@ public class Game2 {
         if (Engine.checkUserAnswer(game2ID, Engine.taskResult, Engine.userAnswer)) {
             System.out.println("Correct!");
             Engine.decRoundCounter();
-             } else {
+        } else {
             Engine.wrongEndingGame(Engine.userAnswer, correctAnswer, Engine.userName);
         }
     }
 
-    public static int calculateResult (int randValue) {
+    public static int calculateResult(int randValue) {
         return randValue % 2;
     }
 

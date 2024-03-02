@@ -35,9 +35,9 @@ public class Game6 {
         } else {
             Engine.wrongEndingGame(Engine.userAnswer, correctAnswer, Engine.userName);
         }
-}
+    }
 
-public static int calculateResult(int randValue){
-    return Arrays.binarySearch(primeNumbers, randValue);
+    public static int calculateResult(int randValue) {
+        return Arrays.binarySearch(primeNumbers, randValue);
     }
 }

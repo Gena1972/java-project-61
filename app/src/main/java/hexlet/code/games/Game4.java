@@ -9,7 +9,8 @@ public class Game4 {
     static int randValue1;
     static int randValue2;
     static int maxValue = 99;
-    public static void game4(){
+
+    public static void game4() {
         Engine.showTaskMessage("Find the greatest common divisor of given numbers.");
         while (Engine.roundCounter > 0) {
             playRound(maxValue);
@@ -32,14 +33,15 @@ public class Game4 {
             Engine.wrongEndingGame(Engine.userAnswer, Engine.taskResult, Engine.userName);
         }
     }
-    public static int calculateResult(int randValue1, int randValue2) {
-            BigInteger b1 = BigInteger.valueOf(randValue1);
-            BigInteger b2 = BigInteger.valueOf(randValue2);
-            BigInteger gcd = b1.gcd(b2);
-            return gcd.intValue();
-        }
 
+    public static int calculateResult(int randValue1, int randValue2) {
+        BigInteger b1 = BigInteger.valueOf(randValue1);
+        BigInteger b2 = BigInteger.valueOf(randValue2);
+        BigInteger gcd = b1.gcd(b2);
+        return gcd.intValue();
     }
+
+}
 
 
 

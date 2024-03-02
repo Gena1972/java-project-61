@@ -36,23 +36,23 @@ public class Game3 {
     }
 
 
-public static int calculateResult(int randValue1, int randValue2) {
-    if (randOperation == '+') {
-        return randValue1 + randValue2;
-    } else if (randOperation == '-') {
-        return randValue1 - randValue2;
-    } else if (randOperation == '*') {
-        return randValue1 * randValue2;
+    public static int calculateResult(int randValue1, int randValue2) {
+        if (randOperation == '+') {
+            return randValue1 + randValue2;
+        } else if (randOperation == '-') {
+            return randValue1 - randValue2;
+        } else if (randOperation == '*') {
+            return randValue1 * randValue2;
+        }
+        return 0;
     }
-    return 0;
-}
 
-public static char genRandOperation(int randValue1, int randValue2) {
-    int randOperationValue = (randValue1 + randValue2) % 3;
-    char[] operationArray = {'+', '-', '*'};
-    return operationArray[randOperationValue];
-}
+    public static char genRandOperation(int randValue1, int randValue2) {
+        int randOperationValue = (randValue1 + randValue2) % 3;
+        char[] operationArray = {'+', '-', '*'};
+        return operationArray[randOperationValue];
     }
+}
 
 
 
