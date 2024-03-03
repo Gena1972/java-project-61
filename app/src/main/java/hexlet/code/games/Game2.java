@@ -11,7 +11,7 @@ public class Game2 {
     static String correctAnswer;
 
     public static void game2() {
-        Engine.showTaskMessage("Answer 'yes' if the number is even, otherwise answer 'no'");
+        Engine.showTaskMessage("Answer 'yes' if the number is even, otherwise answer 'no'.");
         while (Engine.roundCounter > 0) {
             playRound(maxValue);
         }
