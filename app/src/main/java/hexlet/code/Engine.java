@@ -99,7 +99,7 @@ public class Engine {
         System.out.println("Let's try again, " + userName + "!");
         System.exit(0);
     }
-5
+
     public static void correctEndingGame(String userName) {
         System.out.println("Congratulations, " + userName + "!");
     }
