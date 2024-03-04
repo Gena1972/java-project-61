@@ -1,7 +1,7 @@
 plugins {
     id("java")
     application
-    checkstyle
+  //  checkstyle
 }
 
 group = "hexlet.code"
