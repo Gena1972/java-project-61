@@ -90,7 +90,7 @@ public class Engine {
 
     public static void wrongEndingGame(String userAnswer, String correctAnswer, String userName) {
         System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'");
-        System.out.println("Let's try again, " + userName);
+        System.out.println("Let's try again, " + userName + "!");
         System.exit(0);
     }
 
