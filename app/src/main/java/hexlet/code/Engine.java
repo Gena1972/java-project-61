@@ -96,10 +96,10 @@ public class Engine {
 
     public static void wrongEndingGame(String userAnswer, int taskResult, String userName) {
         System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + taskResult + "'");
-        System.out.println("Let's try again, " + userName);
+        System.out.println("Let's try again, " + userName + "!");
         System.exit(0);
     }
-
+5
     public static void correctEndingGame(String userName) {
         System.out.println("Congratulations, " + userName + "!");
     }
