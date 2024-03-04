@@ -1,21 +1,22 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Cli;
 
 import java.math.BigInteger;
 
-public class Game4 {
+public class GCD {
     static public int game4ID = 4;
     static int randValue1;
     static int randValue2;
     static int maxValue = 99;
 
-    public static void game4() {
+    public static void GCD() {
         Engine.showTaskMessage("Find the greatest common divisor of given numbers.");
         while (Engine.roundCounter > 0) {
             playRound(maxValue);
         }
-        Engine.correctEndingGame(Engine.userName);
+        Engine.correctEndingGame(Cli.userName);
     }
 
     public static void playRound(int maxValue) {
@@ -30,7 +31,7 @@ public class Game4 {
             System.out.println("Correct!");
             Engine.decRoundCounter();
         } else {
-            Engine.wrongEndingGame(Engine.userAnswer, Engine.taskResult, Engine.userName);
+            Engine.wrongEndingGame(Engine.userAnswer, Engine.taskResult, Cli.userName);
         }
     }
 

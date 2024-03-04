@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Engine {
 
     static public int roundCounter = 3;
-    static public String userName;
+
 
     static public String userAnswer;
 
@@ -22,22 +22,9 @@ public class Engine {
         roundCounter--;
     }
 
-    public static void showGreeting() {
-        System.out.println();
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        userName = getUserName();
 
-        System.out.println("Hello, " + userName + "!");
-        // scanner.close();
-    }
 
-    public static String getUserName() {
-        Scanner scanner = new Scanner(System.in);
-        // scanner.close();
-        return scanner.nextLine();
-    }
 
     public static int getUserChoice() {
         Scanner scanner = new Scanner(System.in);

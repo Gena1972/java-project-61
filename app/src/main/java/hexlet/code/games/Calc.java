@@ -1,20 +1,21 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Cli;
 
-public class Game3 {
+public class Calc {
     static public int game3ID = 3;
     static int randValue1;
     static int randValue2;
     static int maxValue = 30;
     static public char randOperation;
 
-    public static void game3() {
+    public static void Calc() {
         Engine.showTaskMessage("What is the result of the expression?");
         while (Engine.roundCounter > 0) {
             playRound(maxValue);
         }
-        Engine.correctEndingGame(Engine.userName);
+        Engine.correctEndingGame(Cli.userName);
     }
 
 
@@ -31,7 +32,7 @@ public class Game3 {
             System.out.println("Correct!");
             Engine.decRoundCounter();
         } else {
-            Engine.wrongEndingGame(Engine.userAnswer, Engine.taskResult, Engine.userName);
+            Engine.wrongEndingGame(Engine.userAnswer, Engine.taskResult, Cli.userName);
         }
     }
 

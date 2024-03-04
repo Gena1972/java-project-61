@@ -1,10 +1,11 @@
 package hexlet.code;
 
-import hexlet.code.games.Game2;
-import hexlet.code.games.Game3;
-import hexlet.code.games.Game4;
-import hexlet.code.games.Game5;
-import hexlet.code.games.Game6;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class App {
     public static void main(String[] args) {
@@ -23,22 +24,22 @@ public class App {
         if (userChoice == 0) {
             System.out.println("Exit");
         } else if (userChoice == 1) {
-            Engine.showGreeting();
+            Cli.showGreeting();
         } else if (userChoice == 2) {
-            Engine.showGreeting();
-            Game2.game2();
+            Cli.showGreeting();
+            Even.Even();
         } else if (userChoice == 3) {
-            Engine.showGreeting();
-            Game3.game3();
+            Cli.showGreeting();
+            Calc.Calc();
         } else if (userChoice == 4) {
-            Engine.showGreeting();
-            Game4.game4();
+            Cli.showGreeting();
+            GCD.GCD();
         } else if (userChoice == 5) {
-            Engine.showGreeting();
-            Game5.game5();
+            Cli.showGreeting();
+            Progression.Progression();
         } else if (userChoice == 6) {
-            Engine.showGreeting();
-            Game6.game6();
+            Cli.showGreeting();
+            Prime.Prime();
         }
     }
 }

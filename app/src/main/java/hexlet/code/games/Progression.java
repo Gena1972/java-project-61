@@ -1,8 +1,9 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Cli;
 
-public class Game5 {
+public class Progression {
     static public int game5ID = 5;
     static int stepSequence;
     static public int maxStepSequence = 9;
@@ -13,12 +14,12 @@ public class Game5 {
     static public int hiddenNumber;
     static public String taskQuestionString;
 
-    public static void game5() {
+    public static void Progression() {
         Engine.showTaskMessage("What number is missing in the progression?");
         while (Engine.roundCounter > 0) {
             playRound();
         }
-        Engine.correctEndingGame(Engine.userName);
+        Engine.correctEndingGame(Cli.userName);
     }
 
     public static void playRound() {
@@ -38,7 +39,7 @@ public class Game5 {
             System.out.println("Correct!");
             Engine.decRoundCounter();
         } else {
-            Engine.wrongEndingGame(Engine.userAnswer, Engine.taskResult, Engine.userName);
+            Engine.wrongEndingGame(Engine.userAnswer, Engine.taskResult, Cli.userName);
         }
     }
 
