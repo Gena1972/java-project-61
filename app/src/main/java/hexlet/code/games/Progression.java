@@ -4,16 +4,28 @@ import hexlet.code.Engine;
 import hexlet.code.Cli;
 
 public class Progression {
-    static public int game5ID = 5;
-    static int stepSequence;
-    static public int maxStepSequence = 9;
-    static public int minStepValue = 1;
-    static public int firstValue;
-    static public int maxFirstValue = 15;
-    static public int sequenceLength = 10;
-    static public int hiddenNumber;
-    static public String taskQuestionString;
+    public static void progressionPrepData() {
 
+        int stepSequence;
+        int maxStepSequence = 9;
+        int minStepValue = 1;
+        int firstValue;
+        int maxFirstValue = 15;
+        int sequenceLength = 10;
+        int hiddenNumber;
+        String[] progressionData = String new [6];
+
+        stepSequence = genRandValue(maxStepSequence) + minStepValue;
+        firstValue = genRandValue(maxFirstValue);
+        hiddenNumber = genRandValue(maxStepSequence);
+        int[] arithSequence = new int[sequenceLength];
+
+        progressionData[0] = "What number is missing in the progression?";
+        progressionData[1] = "Question: " + randValue1 + " " + randValue2;
+        progressionData[2] = Integer.toString(result);
+    }
+
+    /*
     public static void Progression() {
         Engine.showTaskMessage("What number is missing in the progression?");
         while (Engine.roundCounter > 0) {
