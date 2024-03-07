@@ -6,7 +6,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 
 public class Calc {
-    public static void calcPrepData() {
+    public static String[] calcPrepData() {
         int randValue1;
         int randValue2;
         int maxValue = 30;
@@ -18,9 +18,9 @@ public class Calc {
         randValue2 = genRandValue(maxValue);
         randOperation = genRandOperation(randValue1, randValue2);
         result = calculateResult(randValue1, randValue2, randOperation);
-       calcData[0] = "What is the result of the expression?";
-       calcData[1] = "Question: " + randValue1 + " " + randOperation + " " + randValue2;
-       calcData[2] = Integer.toString(result);
+        calcData[0] = "What is the result of the expression?";
+        calcData[1] = "Question: " + randValue1 + " " + randOperation + " " + randValue2;
+        calcData[2] = Integer.toString(result);
 
         randValue1 = genRandValue(maxValue);
         randValue2 = genRandValue(maxValue);
@@ -34,17 +34,12 @@ public class Calc {
         randOperation = genRandOperation(randValue1, randValue2);
         calcData[5] = "Question: " + randValue1 + " " + randOperation + " " + randValue2;
         calcData[6] = Integer.toString(result);
-         /* "Question: ",
-            "Your answer:",
-         "is wrong answer ;(. Correct answer was ",
-          "Let's try again, ",
-          "Correct!",
-          "Congratulations, "*/
+
+        return calcData;
     }
 
 
-
-    public static int genRandValue(int maxValue){
+    public static int genRandValue(int maxValue) {
         Random random = new Random();
         return random.nextInt(maxValue);
     }
@@ -54,6 +49,7 @@ public class Calc {
         char[] operationArray = {'+', '-', '*'};
         return operationArray[randOperationValue];
     }
+
     public static int calculateResult(int randValue1, int randValue2, char randOperation) {
         if (randOperation == '+') {
             return randValue1 + randValue2;

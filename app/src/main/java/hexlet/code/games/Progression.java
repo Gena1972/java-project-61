@@ -1,10 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-import hexlet.code.Cli;
+
+import java.util.Random;
 
 public class Progression {
-    public static void progressionPrepData() {
+    public static String[] progressionPrepData() {
 
         int stepSequence;
         int maxStepSequence = 9;
@@ -12,18 +12,68 @@ public class Progression {
         int firstValue;
         int maxFirstValue = 15;
         int sequenceLength = 10;
+        int[] arithSequence = new int[sequenceLength];
         int hiddenNumber;
-        String[] progressionData = String new [6];
+        StringBuilder stringProgression = new StringBuilder();
+        int result;
+        String[] progressionData = new String[6];
 
         stepSequence = genRandValue(maxStepSequence) + minStepValue;
         firstValue = genRandValue(maxFirstValue);
         hiddenNumber = genRandValue(maxStepSequence);
-        int[] arithSequence = new int[sequenceLength];
+        arithSequence = createArithSequence(firstValue, stepSequence, sequenceLength, arithSequence);
+        result = calculateResult(hiddenNumber, arithSequence);
 
         progressionData[0] = "What number is missing in the progression?";
-        progressionData[1] = "Question: " + randValue1 + " " + randValue2;
+        progressionData[1] = "Question: " + intArrayToString(arithSequence);
         progressionData[2] = Integer.toString(result);
+
+        stepSequence = genRandValue(maxStepSequence) + minStepValue;
+        firstValue = genRandValue(maxFirstValue);
+        hiddenNumber = genRandValue(maxStepSequence);
+        arithSequence = createArithSequence(firstValue, stepSequence, sequenceLength, arithSequence);
+        result = calculateResult(hiddenNumber, arithSequence);
+
+        progressionData[3] = "Question: " + intArrayToString(arithSequence);
+        progressionData[4] = Integer.toString(result);
+
+        stepSequence = genRandValue(maxStepSequence) + minStepValue;
+        firstValue = genRandValue(maxFirstValue);
+        hiddenNumber = genRandValue(maxStepSequence);
+        arithSequence = createArithSequence(firstValue, stepSequence, sequenceLength, arithSequence);
+        result = calculateResult(hiddenNumber, arithSequence);
+
+        progressionData[5] = "Question: " + intArrayToString(arithSequence);
+        progressionData[6] = Integer.toString(result);
+
+        return progressionData;
     }
+
+    public static int genRandValue(int maxValue) {
+        Random random = new Random();
+        return random.nextInt(maxValue);
+    }
+
+    public static int[] createArithSequence(int firstValue, int stepSequence, int sequenceLength, int[] arithSequence) {
+        arithSequence[0] = firstValue;
+        for (int i = 1; i < sequenceLength; i++) {
+            arithSequence[i] = firstValue += stepSequence;
+        }
+        return arithSequence;
+    }
+
+    public static int calculateResult(int hiddenNumber, int[] arithSequence) {
+        return arithSequence[hiddenNumber];
+    }
+
+    public static StringBuilder intArrayToString(int[] array) {
+        StringBuilder builder = new StringBuilder();
+        for (int i : array) {
+            builder.append(i);
+        }
+        return builder;
+    }
+}
 
     /*
     public static void Progression() {
@@ -79,3 +129,4 @@ public class Progression {
     }
 }
 
+*/

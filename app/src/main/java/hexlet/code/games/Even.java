@@ -6,7 +6,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 
 public class Even {
-    public static void evenPrepData(){
+    public static String[] evenPrepData() {
         int randValue;
         int maxValue = 1000;
         String result;
@@ -28,20 +28,10 @@ public class Even {
         evenData[5] = "Question: " + randValue;
         evenData[6] = result;
 
-    /*evenData[1] = "Question: " + randValue;
-        evenData[2] = result;
-            "Answer 'yes' if the number is even, otherwise answer 'no'.",
-            "Question: ",
-            "Your answer: ",
-            "is wrong answer ;(. Correct answer was ",
-            "Let's try again,",
-            "Correct!",
-            "Congratulations, "
+        return evenData;
+    }
 
-     */
-    };
-
-    public static int genRandValue(int maxValue){
+    public static int genRandValue(int maxValue) {
         Random random = new Random();
         return random.nextInt(maxValue);
     }

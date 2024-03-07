@@ -7,7 +7,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 public class GCD {
-    public static void gcdPrepData() {
+    public static String[] gcdPrepData() {
         int randValue1;
         int randValue2;
         int maxValue = 99;
@@ -33,9 +33,11 @@ public class GCD {
         result = calculateResult(randValue1, randValue2);
         gcdData[5] = "Question: " + randValue1 + " " + randValue2;
         gcdData[6] = Integer.toString(result);
+
+        return gcdData;
     }
 
-    public static int genRandValue(int maxValue){
+    public static int genRandValue(int maxValue) {
         Random random = new Random();
         return random.nextInt(maxValue);
     }
