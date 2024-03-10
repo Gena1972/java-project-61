@@ -1,98 +1,63 @@
 package hexlet.code;
 
+//import java.util.Arrays;
+
 import java.util.Random;
 import java.util.Scanner;
 
 
 public class Engine {
 
-    static public int roundCounter = 3;
+    public static void engine(String gameData[]) {
 
+        //   System.out.println(Arrays.toString(gameData));
+        // Elements of gameData array
+        int mainQuestion = 0;
+        int questionOfRound1 = 1;
+        int answerOfRound1 = 2;
+        int questionOfRound2 = 3;
+        int answerOfRound2 = 4;
+        int questionOfRound3 = 5;
+        int answerOfRound3 = 6;
+        int userName = 7;
 
-    static public String userAnswer;
-
-    static public int taskResult;
-
-    //static public String correctAnswer = "" + taskResult;
-
-    //static public boolean checkUserAnswer = true;
-
-
-    public static void decRoundCounter() {
-        roundCounter--;
-    }
-
-
-
-
-
-    public static int getUserChoice() {
+        System.out.println(gameData[mainQuestion]);
+        System.out.println(gameData[questionOfRound1]);
         Scanner scanner = new Scanner(System.in);
-        int userValue = scanner.nextInt();
-        System.out.println("Your choice: " + userValue);
-        // scanner.close();
-        return userValue;
-    }
-
-    public static int genRandValue(int maxValue) {
-        Random random = new Random();
-        return random.nextInt(maxValue);
-    }
-
-    public static String getUserAnswer() {
-        Scanner scanner = new Scanner(System.in);
-
-        //scanner.close();
-        return scanner.nextLine();
-    }
-
-    //shows 1 time
-    public static void showTaskMessage(String str) {
-        System.out.println(str);
-    }
-
-    //shows 3 time (every round)
-    public static void showTaskQuestion(String str) {
-        System.out.println(str);
-    }
-
-    public static void showUserAnswer(String str) {
-        System.out.println(str);
-    }
-
-
-    public static boolean checkUserAnswer(int gameID, int taskResult, String userAnswer) {
-        if (gameID == 2) {
-            return ((taskResult == 0) && userAnswer.equals("yes") ||
-                    (!(taskResult == 0) && userAnswer.equals("no")));
-        } else if (gameID == 3 || gameID == 4 || gameID == 5) {
-            return (taskResult == Integer.parseInt(userAnswer));
-        } else if (gameID == 6) {
-            return (taskResult >= 0) && userAnswer.equals("yes") ||
-                    (taskResult < 0) && userAnswer.equals("no");
+        String userAnswer = scanner.nextLine();
+        if (gameData[answerOfRound1].equals(userAnswer)) {
+            System.out.println("Your answer: " + userAnswer);
+            System.out.println("Correct!");
+            System.out.println(gameData[questionOfRound2]);
+            scanner = new Scanner(System.in);
+            userAnswer = scanner.nextLine();
+        } else {
+            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. CCorrect answer was " + "'" + gameData[answerOfRound1]  + "'" +"\n" +
+                    "Let's try again, " + gameData[userName] + "!");
+            System.exit(0);
         }
-        return false;
+        if (gameData[answerOfRound2].equals(userAnswer)) {
+            System.out.println("Your answer: " + userAnswer);
+            System.out.println("Correct!");
+            System.out.println(gameData[questionOfRound3]);
+            scanner = new Scanner(System.in);
+            userAnswer = scanner.nextLine();
+        } else {
+            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + gameData[answerOfRound2] + "'" + "\n" +
+                    "Let's try again, " + gameData[userName] + "!");
+            System.exit(0);
+        }
+        if (gameData[answerOfRound3].equals(userAnswer)) {
+            System.out.println("Your answer: " + userAnswer);
+            System.out.println("Correct!");
+            System.out.println("Congratulations, " + gameData[userName]);
+
+
+        } else {
+            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + gameData[answerOfRound3] + "'" + "\n" +
+                    "Let's try again, " + gameData[userName] + "!");
+            System.exit(0);
+        }
     }
-
-
-    public static void wrongEndingGame(String userAnswer, String correctAnswer, String userName) {
-        System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'");
-        System.out.println("Let's try again, " + userName + "!");
-        System.exit(0);
-    }
-
-    public static void wrongEndingGame(String userAnswer, int taskResult, String userName) {
-        System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + taskResult + "'");
-        System.out.println("Let's try again, " + userName + "!");
-        System.exit(0);
-    }
-
-    public static void correctEndingGame(String userName) {
-        System.out.println("Congratulations, " + userName + "!");
-    }
-
-    public static boolean isEven(int randValue) {
-        return randValue % 2 == 0;
-    }
-
 }
+

@@ -6,6 +6,7 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -20,26 +21,33 @@ public class App {
         System.out.println("0 - Exit");
 
 
-        userChoice = Engine.getUserChoice();
+        userChoice = getUserChoice();
         if (userChoice == 0) {
             System.out.println("Exit");
         } else if (userChoice == 1) {
             Cli.showGreeting();
         } else if (userChoice == 2) {
             Cli.showGreeting();
-            Even.Even();
+            Even.play();
         } else if (userChoice == 3) {
             Cli.showGreeting();
-            Calc.Calc();
+            Calc.play();
         } else if (userChoice == 4) {
             Cli.showGreeting();
-            GCD.GCD();
+            GCD.play();
         } else if (userChoice == 5) {
             Cli.showGreeting();
-            Progression.Progression();
+            Progression.play();
         } else if (userChoice == 6) {
             Cli.showGreeting();
-            Prime.Prime();
+            Prime.play();
         }
+    }
+    public static int getUserChoice() {
+        Scanner scanner = new Scanner(System.in);
+        int userValue = scanner.nextInt();
+        System.out.println("Your choice: " + userValue);
+        // scanner.close();
+        return userValue;
     }
 }

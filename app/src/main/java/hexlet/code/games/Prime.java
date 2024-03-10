@@ -7,13 +7,19 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Prime {
+    public static void play (){
+        String[] primeData;
+        primeData = primePrepData();
+        Engine.engine(primeData);
+
+    }
     static public int[] primeNumbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
 
-    public static String[] progressionPrepData() {
+    public static String[] primePrepData() {
         int maxValue = 100;
         int randValue;
         String result;
-        String[] primeData = new String[6];
+        String[] primeData = new String[8];
 
         randValue = genRandValue(maxValue);
         result = calculateResult(randValue);
@@ -31,7 +37,7 @@ public class Prime {
         result = calculateResult(randValue);
         primeData[5] = "Question: " + randValue;
         primeData[6] = result;
-
+        primeData[7] = Cli.userName;
         return primeData;
     }
 
@@ -45,36 +51,4 @@ public class Prime {
     }
 }
 
-    /*
 
-    public static void Prime() {
-        Engine.showTaskMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        while (Engine.roundCounter > 0) {
-            playRound(maxValue);
-        }
-        Engine.correctEndingGame(Cli.userName);
-    }
-
-    public static void playRound(int maxValue) {
-
-        randValue = Engine.genRandValue(maxValue);
-        Engine.showTaskQuestion("Question: " + randValue);
-
-        Engine.userAnswer = Engine.getUserAnswer();
-        Engine.showUserAnswer("Your answer: " + Engine.userAnswer);
-        Engine.taskResult = calculateResult(randValue);
-        correctAnswer = (Engine.taskResult >= 0 ? "yes" : "no");
-        if (Engine.checkUserAnswer(game6ID, Engine.taskResult, Engine.userAnswer)) {
-            System.out.println("Correct!");
-            Engine.decRoundCounter();
-        } else {
-            Engine.wrongEndingGame(Engine.userAnswer, correctAnswer, Cli.userName);
-        }
-    }
-
-    public static int calculateResult(int randValue) {
-        return Arrays.binarySearch(primeNumbers, randValue);
-    }
-}
-
-     */
