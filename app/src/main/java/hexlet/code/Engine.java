@@ -50,7 +50,7 @@ public class Engine {
         if (gameData[answerOfRound3].equals(userAnswer)) {
             System.out.println("Your answer: " + userAnswer);
             System.out.println("Correct!");
-            System.out.println("Congratulations, " + gameData[userName]);
+            System.out.println("Congratulations, " + gameData[userName] + "!");
 
 
         } else {
