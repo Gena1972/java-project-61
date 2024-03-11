@@ -7,8 +7,9 @@ import java.util.Scanner;
 
 
 public class Engine {
+    public static final int ROUNDS = 3;
+    public static void engine(String description, String gameData[]) {
 
-    public static void engine(String gameData[]) {
 
         //   System.out.println(Arrays.toString(gameData));
         // Elements of gameData array
@@ -21,14 +22,14 @@ public class Engine {
         int answerOfRound3 = 6;
         int userName = 7;
 
-        System.out.println(gameData[mainQuestion]);
-        System.out.println(gameData[questionOfRound1]);
+        System.out.println(description);
+        System.out.println("Question: " + gameData[questionOfRound1]);
         Scanner scanner = new Scanner(System.in);
         String userAnswer = scanner.nextLine();
         if (gameData[answerOfRound1].equals(userAnswer)) {
             System.out.println("Your answer: " + userAnswer);
             System.out.println("Correct!");
-            System.out.println(gameData[questionOfRound2]);
+            System.out.println("Question: " + gameData[questionOfRound2]);
             scanner = new Scanner(System.in);
             userAnswer = scanner.nextLine();
         } else {
@@ -39,7 +40,7 @@ public class Engine {
         if (gameData[answerOfRound2].equals(userAnswer)) {
             System.out.println("Your answer: " + userAnswer);
             System.out.println("Correct!");
-            System.out.println(gameData[questionOfRound3]);
+            System.out.println("Question: " + gameData[questionOfRound3]);
             scanner = new Scanner(System.in);
             userAnswer = scanner.nextLine();
         } else {

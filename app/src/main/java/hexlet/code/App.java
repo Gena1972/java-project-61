@@ -25,21 +25,21 @@ public class App {
         if (userChoice == 0) {
             System.out.println("Exit");
         } else if (userChoice == 1) {
-            Cli.showGreeting();
+            Cli.greet();
         } else if (userChoice == 2) {
-            Cli.showGreeting();
+            Cli.greet();
             Even.play();
         } else if (userChoice == 3) {
-            Cli.showGreeting();
+            Cli.greet();
             Calc.play();
         } else if (userChoice == 4) {
-            Cli.showGreeting();
+            Cli.greet();
             GCD.play();
         } else if (userChoice == 5) {
-            Cli.showGreeting();
+            Cli.greet();
             Progression.play();
         } else if (userChoice == 6) {
-            Cli.showGreeting();
+            Cli.greet();
             Prime.play();
         }
     }

@@ -7,6 +7,7 @@ import java.util.Random;
 
 public class Even {
     public static void play (){
+        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[] evenData;
         evenData = evenPrepData();
         Engine.engine(evenData);
@@ -18,11 +19,12 @@ public class Even {
         String result;
         String[] evenData = new String[8];
 
-        randValue = genRandValue(maxValue);
-        result = calculateResult(randValue);
-        evenData[0] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        evenData[1] = "Question: " + randValue;
-        evenData[2] = result;
+        for(int i = 0; i < Engine.ROUNDS; i++) {
+            randValue = genRandValue(maxValue);
+            result = calculateResult(randValue);
+            evenData[i] = "Question: " + randValue;
+            evenData[i+1] = result;
+        }
 
         randValue = genRandValue(maxValue);
         result = calculateResult(randValue);

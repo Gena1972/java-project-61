@@ -7,43 +7,30 @@ import java.util.Random;
 
 public class Calc {
     public static void play (){
+        String description = "What is the result of the expression?";
         String[] calcData;
         calcData = calcPrepData();
-        Engine.engine(calcData);
+        Engine.engine(description, calcData);
 
     }
     public static String[] calcPrepData() {
+
         int randValue1;
         int randValue2;
         int maxValue = 30;
         char randOperation;
         int result;
-        String[] calcData = new String[8];
+        String[] calcData = new String[7];
 
-        randValue1 = genRandValue(maxValue);
-        randValue2 = genRandValue(maxValue);
-        randOperation = genRandOperation(randValue1, randValue2);
-        result = calculateResult(randValue1, randValue2, randOperation);
-        calcData[0] = "What is the result of the expression?";
-        calcData[1] = "Question: " + randValue1 + " " + randOperation + " " + randValue2;
-        calcData[2] = Integer.toString(result);
-
-        randValue1 = genRandValue(maxValue);
-        randValue2 = genRandValue(maxValue);
-        randOperation = genRandOperation(randValue1, randValue2);
-        result = calculateResult(randValue1, randValue2, randOperation);
-        calcData[3] = "Question: " + randValue1 + " " + randOperation + " " + randValue2;
-        calcData[4] = Integer.toString(result);
-
-        randValue1 = genRandValue(maxValue);
-        randValue2 = genRandValue(maxValue);
-        randOperation = genRandOperation(randValue1, randValue2);
-        result = calculateResult(randValue1, randValue2, randOperation);
-        calcData[5] = "Question: " + randValue1 + " " + randOperation + " " + randValue2;
-        calcData[6] = Integer.toString(result);
-        calcData[7] = Cli.userName;
-
-        return calcData;
+        for(int i = 0; i < Engine.ROUNDS; i+=2){
+            randValue1 = genRandValue(maxValue);
+            randValue2 = genRandValue(maxValue);
+            randOperation = genRandOperation(randValue1, randValue2);
+            result = calculateResult(randValue1, randValue2, randOperation);
+            calcData[i] = randValue1 + " " + randOperation + " " + randValue2;
+            calcData[i+1] = Integer.toString(result);
+        }
+       return calcData;
     }
 
 
