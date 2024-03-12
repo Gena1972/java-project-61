@@ -8,18 +8,44 @@ import java.util.Random;
 public class Calc {
     public static void play (){
         String description = "What is the result of the expression?";
-        String[] calcData;
+        String[][] calcData;
         calcData = calcPrepData();
         Engine.engine(description, calcData);
 
     }
-    public static String[] calcPrepData() {
+    public static String[][] calcPrepData() {
 
         int randValue1;
         int randValue2;
         int maxValue = 30;
         char randOperation;
         int result;
+
+        String[][] calcData = new String[2][Engine.ROUNDS];
+        int QuestionArray = 0;
+        int AnswerArray = 1;
+        for (int j = 0; j < Engine.ROUNDS; j++) {
+            randValue1 = genRandValue(maxValue);
+            randValue2 = genRandValue(maxValue);
+            randOperation = genRandOperation(randValue1, randValue2);
+            calcData[QuestionArray][j] = "" + randValue1 + "randOperation" + randValue2;
+            calcData[AnswerArray][j] = "" + calculateResult(randValue1, randValue2, randOperation);;
+        }
+        return calcData;
+    }
+        /*
+        String[][] calcData = new String[2][Engine.ROUNDS];
+
+        for(int i = 0; i < 2; i++) {
+            for (int j = 0; j < Engine.ROUNDS; j++) {
+                calcData[i][j] = (i == 0) ? genRandValue(maxValue) : calculateResult(randValue);
+            }
+        }
+
+        return calcData;
+    }
+}
+        /*
         String[] calcData = new String[7];
 
         for(int i = 0; i < Engine.ROUNDS; i+=2){
@@ -32,6 +58,8 @@ public class Calc {
         }
        return calcData;
     }
+    */
+
 
 
     public static int genRandValue(int maxValue) {

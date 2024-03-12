@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int ROUNDS = 3;
-    public static void engine(String description, String gameData[]) {
+    public static void engine(String description, String gameData[][]) {
 
 
         //   System.out.println(Arrays.toString(gameData));

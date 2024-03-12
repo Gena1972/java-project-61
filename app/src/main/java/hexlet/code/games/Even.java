@@ -6,38 +6,29 @@ import hexlet.code.Cli;
 import java.util.Random;
 
 public class Even {
-    public static void play (){
+    public static void play() {
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[] evenData;
+        String[][] evenData;
         evenData = evenPrepData();
-        Engine.engine(evenData);
+        Engine.engine(description, evenData);
 
     }
-    public static String[] evenPrepData() {
+
+    public static String[][] evenPrepData() {
         int randValue;
         int maxValue = 1000;
         String result;
-        String[] evenData = new String[8];
-
-        for(int i = 0; i < Engine.ROUNDS; i++) {
+        String[][] evenData = new String[2][Engine.ROUNDS];
+        int QuestionArray = 0;
+        int AnswerArray = 1;
+        for (int j = 0; j < Engine.ROUNDS; j++) {
             randValue = genRandValue(maxValue);
-            result = calculateResult(randValue);
-            evenData[i] = "Question: " + randValue;
-            evenData[i+1] = result;
+            evenData[QuestionArray][j] = "" + randValue;
+            evenData[AnswerArray][j] = calculateResult(randValue);
         }
-
-        randValue = genRandValue(maxValue);
-        result = calculateResult(randValue);
-        evenData[3] = "Question: " + randValue;
-        evenData[4] = result;
-
-        randValue = genRandValue(maxValue);
-        result = calculateResult(randValue);
-        evenData[5] = "Question: " + randValue;
-        evenData[6] = result;
-        evenData[7] = Cli.userName;
         return evenData;
     }
+
 
     public static int genRandValue(int maxValue) {
         Random random = new Random();

@@ -7,18 +7,34 @@ import java.math.BigInteger;
 import java.util.Random;
 
 public class GCD {
+
     public static void play() {
-        String[] gcdData;
+        String description = "Find the greatest common divisor of given numbers.";
+        String[][] gcdData;
         gcdData = gcdPrepData();
-        Engine.engine(gcdData);
+        Engine.engine(description, gcdData);
 
     }
 
-    public static String[] gcdPrepData() {
+    public static String[][] gcdPrepData() {
         int randValue1;
         int randValue2;
         int maxValue = 99;
         int result;
+
+        String[][] gcdData = new String[2][Engine.ROUNDS];
+        int QuestionArray = 0;
+        int AnswerArray = 1;
+        for (int j = 0; j < Engine.ROUNDS; j++) {
+            randValue1 = genRandValue(maxValue);
+            randValue2 = genRandValue(maxValue);
+
+            gcdData[QuestionArray][j] = "" + randValue1 + " " + randValue2;
+            gcdData[AnswerArray][j] = "" + calculateResult(randValue1, randValue2);
+        }
+        return gcdData;
+    }
+        /*
         String[] gcdData = new String[8];
 
         randValue1 = genRandValue(maxValue);
@@ -42,6 +58,8 @@ public class GCD {
         gcdData[7] = Cli.userName;
         return gcdData;
     }
+
+         */
 
     public static int genRandValue(int maxValue) {
         Random random = new Random();
