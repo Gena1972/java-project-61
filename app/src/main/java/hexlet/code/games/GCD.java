@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Cli;
-
 import java.math.BigInteger;
 import java.util.Random;
 
@@ -23,43 +21,18 @@ public class GCD {
         int result;
 
         String[][] gcdData = new String[2][Engine.ROUNDS];
-        int QuestionArray = 0;
-        int AnswerArray = 1;
+        int questionArray = 0;
+        int answerArray = 1;
         for (int j = 0; j < Engine.ROUNDS; j++) {
             randValue1 = genRandValue(maxValue);
             randValue2 = genRandValue(maxValue);
 
-            gcdData[QuestionArray][j] = "" + randValue1 + " " + randValue2;
-            gcdData[AnswerArray][j] = "" + calculateResult(randValue1, randValue2);
+            gcdData[questionArray][j] = "" + randValue1 + " " + randValue2;
+            gcdData[answerArray][j] = "" + calculateResult(randValue1, randValue2);
         }
         return gcdData;
     }
-        /*
-        String[] gcdData = new String[8];
 
-        randValue1 = genRandValue(maxValue);
-        randValue2 = genRandValue(maxValue);
-        result = calculateResult(randValue1, randValue2);
-        gcdData[0] = "Find the greatest common divisor of given numbers.";
-        gcdData[1] = "Question: " + randValue1 + " " + randValue2;
-        gcdData[2] = Integer.toString(result);
-
-        randValue1 = genRandValue(maxValue);
-        randValue2 = genRandValue(maxValue);
-        result = calculateResult(randValue1, randValue2);
-        gcdData[3] = "Question: " + randValue1 + " " + randValue2;
-        gcdData[4] = Integer.toString(result);
-
-        randValue1 = genRandValue(maxValue);
-        randValue2 = genRandValue(maxValue);
-        result = calculateResult(randValue1, randValue2);
-        gcdData[5] = "Question: " + randValue1 + " " + randValue2;
-        gcdData[6] = Integer.toString(result);
-        gcdData[7] = Cli.userName;
-        return gcdData;
-    }
-
-         */
 
     public static int genRandValue(int maxValue) {
         Random random = new Random();

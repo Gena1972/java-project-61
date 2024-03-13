@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Cli;
+
 
 import java.util.Random;
 
@@ -19,12 +19,12 @@ public class Even {
         int maxValue = 1000;
         String result;
         String[][] evenData = new String[2][Engine.ROUNDS];
-        int QuestionArray = 0;
-        int AnswerArray = 1;
+        int questionArray = 0;
+        int answerArray = 1;
         for (int j = 0; j < Engine.ROUNDS; j++) {
             randValue = genRandValue(maxValue);
-            evenData[QuestionArray][j] = "" + randValue;
-            evenData[AnswerArray][j] = calculateResult(randValue);
+            evenData[questionArray][j] = "" + randValue;
+            evenData[answerArray][j] = calculateResult(randValue);
         }
         return evenData;
     }

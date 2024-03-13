@@ -1,12 +1,12 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Cli;
+
 
 import java.util.Random;
 
 public class Calc {
-    public static void play (){
+    public static void play() {
         String description = "What is the result of the expression?";
         String[][] calcData;
         calcData = calcPrepData();
@@ -22,45 +22,17 @@ public class Calc {
         int result;
 
         String[][] calcData = new String[2][Engine.ROUNDS];
-        int QuestionArray = 0;
-        int AnswerArray = 1;
+        int questionArray = 0;
+        int answerArray = 1;
         for (int j = 0; j < Engine.ROUNDS; j++) {
             randValue1 = genRandValue(maxValue);
             randValue2 = genRandValue(maxValue);
             randOperation = genRandOperation(randValue1, randValue2);
-            calcData[QuestionArray][j] = "" + randValue1 + "randOperation" + randValue2;
-            calcData[AnswerArray][j] = "" + calculateResult(randValue1, randValue2, randOperation);;
+            calcData[questionArray][j] = "" + randValue1 + " " + randOperation + " " + randValue2;
+            calcData[answerArray][j] = "" + calculateResult(randValue1, randValue2, randOperation);;
         }
         return calcData;
     }
-        /*
-        String[][] calcData = new String[2][Engine.ROUNDS];
-
-        for(int i = 0; i < 2; i++) {
-            for (int j = 0; j < Engine.ROUNDS; j++) {
-                calcData[i][j] = (i == 0) ? genRandValue(maxValue) : calculateResult(randValue);
-            }
-        }
-
-        return calcData;
-    }
-}
-        /*
-        String[] calcData = new String[7];
-
-        for(int i = 0; i < Engine.ROUNDS; i+=2){
-            randValue1 = genRandValue(maxValue);
-            randValue2 = genRandValue(maxValue);
-            randOperation = genRandOperation(randValue1, randValue2);
-            result = calculateResult(randValue1, randValue2, randOperation);
-            calcData[i] = randValue1 + " " + randOperation + " " + randValue2;
-            calcData[i+1] = Integer.toString(result);
-        }
-       return calcData;
-    }
-    */
-
-
 
     public static int genRandValue(int maxValue) {
         Random random = new Random();
