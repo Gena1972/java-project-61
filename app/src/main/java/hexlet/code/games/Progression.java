@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 
-
 import hexlet.code.Engine;
 
 import java.util.Random;
@@ -13,6 +12,7 @@ public class Progression {
         progressionData = progressionPrepData();
         Engine.engine(description, progressionData);
     }
+
     public static String[][] progressionPrepData() {
 
         int stepSequence;
@@ -21,9 +21,9 @@ public class Progression {
         int firstValue;
         int maxFirstValue = 15;
         int sequenceLength = 10;
-        int[] arithSequence = new int[sequenceLength];
+        String[] arithSequence = new String[sequenceLength];
         int hiddenNumber;
-        int result;
+        String result;
         String[][] progressionData = new String[2][Engine.ROUNDS];
 
         int questionArray = 0;
@@ -33,14 +33,16 @@ public class Progression {
             stepSequence = genRandValue(maxStepSequence) + minStepValue;
             firstValue = genRandValue(maxFirstValue);
             hiddenNumber = genRandValue(maxStepSequence);
-            arithSequence = createArithSequence(firstValue, stepSequence, sequenceLength, arithSequence);
-            result = calculateResult(hiddenNumber, arithSequence);
-            progressionData[questionArray][j] = intArrayToString(arithSequence, hiddenNumber);
+            arithSequence = createArithSequence(firstValue, stepSequence, sequenceLength);
+            result = arithSequence[hiddenNumber];
+            arithSequence[hiddenNumber] = "..";
+            progressionData[questionArray][j] = String.join(" ", arithSequence);
             progressionData[answerArray][j] = "" + result;
+
+
         }
         return progressionData;
     }
-
 
 
     public static int genRandValue(int maxValue) {
@@ -48,25 +50,12 @@ public class Progression {
         return random.nextInt(maxValue);
     }
 
-    public static int[] createArithSequence(int firstValue, int stepSequence, int sequenceLength, int[] arithSequence) {
-        arithSequence[0] = firstValue;
+    public static String[] createArithSequence(int firstValue, int stepSequence, int sequenceLength) {
+        String[] arithSequence = new String[sequenceLength];
+        arithSequence[0] = "" + firstValue;
         for (int i = 1; i < sequenceLength; i++) {
-            arithSequence[i] = (firstValue += stepSequence);
+            arithSequence[i] = "" + (firstValue += stepSequence);
         }
         return arithSequence;
     }
-
-    public static int calculateResult(int hiddenNumber, int[] arithSequence) {
-        return arithSequence[hiddenNumber];
-    }
-
-
-    public static String intArrayToString(int[] array, int hiddenNumber) {
-        String arrayToString = "";
-        for (int i = 0; i < array.length; i++) {
-            arrayToString += (i == hiddenNumber ? ".." : array[i]) + " ";
-        }
-        return arrayToString;
-    }
 }
-

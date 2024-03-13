@@ -25,14 +25,14 @@ public class Engine {
                 System.out.println("Your answer: " + userAnswer);
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + gameData[answerArray][j] + "'" + "\n"
-                        + "Let's try again, " + "XXX" + "!");
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + gameData[answerArray][j] + "'");
+                System.out.println("Let's try again, " + "XXX" + "!");
                 System.exit(0);
             }
 
 
-
-        } System.out.println("Congratulations, " + "XXX" + "!");
+        }
+        System.out.println("Congratulations, " + "XXX" + "!");
     }
 }
 

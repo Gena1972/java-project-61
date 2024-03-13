@@ -15,8 +15,8 @@ public class Prime {
         Engine.engine(description, primeData);
 
     }
+
     public static String[][] primePrepData() {
-        int[] primeNumbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
         int maxValue = 100;
         int randValue;
         String result;
@@ -26,11 +26,10 @@ public class Prime {
         for (int j = 0; j < Engine.ROUNDS; j++) {
             randValue = genRandValue(maxValue);
             primeData[questionArray][j] = "" + randValue;
-            primeData[answerArray][j] = "" + calculateResult(primeNumbers, randValue);
+            primeData[answerArray][j] = "" + calculateResult(randValue);
         }
         return primeData;
     }
-
 
 
     public static int genRandValue(int maxValue) {
@@ -38,9 +37,18 @@ public class Prime {
         return random.nextInt(maxValue);
     }
 
-    public static String calculateResult(int[]primeNumbers, int randValue) {
-           return (Arrays.binarySearch(primeNumbers, randValue) > 0) ? "yes" : "no";
+    private static String calculateResult(int randValue) {
+        if (randValue < 2) {
+            return "no";
+        }
+        for (int k = 2; k <= Math.sqrt(randValue); k++) {
+            if (randValue % k == 0) {
+                return "no";
+            }
+        }
+        return "yes";
     }
 }
+
 
 
