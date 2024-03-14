@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 public class GCD {
+    public static final int MAXVALUE = 99;
 
     public static void play() {
         String description = "Find the greatest common divisor of given numbers.";
@@ -17,15 +18,13 @@ public class GCD {
     public static String[][] gcdPrepData() {
         int randValue1;
         int randValue2;
-        int maxValue = 99;
-        int result;
 
         String[][] gcdData = new String[2][Engine.ROUNDS];
         int questionArray = 0;
         int answerArray = 1;
         for (int j = 0; j < Engine.ROUNDS; j++) {
-            randValue1 = genRandValue(maxValue);
-            randValue2 = genRandValue(maxValue);
+            randValue1 = genRandValue(MAXVALUE);
+            randValue2 = genRandValue(MAXVALUE);
 
             gcdData[questionArray][j] = "" + randValue1 + " " + randValue2;
             gcdData[answerArray][j] = "" + calculateResult(randValue1, randValue2);

@@ -7,8 +7,17 @@ import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 import java.util.Scanner;
 
+
 public class App {
+    public static final int GREETID = 1;
+    public static final int EVENID = 2;
+    public static final int CALCID = 3;
+    public static final int GCDID = 4;
+    public static final int PROGRESSIONID = 5;
+    public static final int PRIMEID = 6;
+    public static final int EXITID = 0;
     public static void main(String[] args) {
+
         int userChoice;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -21,23 +30,23 @@ public class App {
 
 
         userChoice = getUserChoice();
-        if (userChoice == 0) {
+        if (userChoice == EXITID) {
             System.out.println("Exit");
-        } else if (userChoice == 1) {
+        } else if (userChoice == GREETID) {
             Cli.greet();
-        } else if (userChoice == 2) {
+        } else if (userChoice == EVENID) {
             Cli.greet();
             Even.play();
-        } else if (userChoice == 3) {
+        } else if (userChoice == CALCID) {
             Cli.greet();
             Calc.play();
-        } else if (userChoice == 4) {
+        } else if (userChoice == GCDID) {
             Cli.greet();
             GCD.play();
-        } else if (userChoice == 5) {
+        } else if (userChoice == PROGRESSIONID) {
             Cli.greet();
             Progression.play();
-        } else if (userChoice == 6) {
+        } else if (userChoice == PRIMEID) {
             Cli.greet();
             Prime.play();
         }

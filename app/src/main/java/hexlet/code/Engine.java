@@ -12,8 +12,8 @@ public class Engine {
         int questionArray = 0;
         int answerArray = 1;
         Scanner scanner = new Scanner(System.in);
-        // TEST System.out.println(Arrays.toString(gameData));
-        System.out.println(Arrays.deepToString(gameData));
+
+       System.out.println(Arrays.deepToString(gameData));
 
         System.out.println(description);
         for (int j = 0; j < Engine.ROUNDS; j++) {
