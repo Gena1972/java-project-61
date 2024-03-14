@@ -11,7 +11,7 @@ public class Engine {
     public static void engine(String description, String[][] gameData) {
         int questionArray = 0;
         int answerArray = 1;
-
+        Scanner scanner = new Scanner(System.in);
         // TEST System.out.println(Arrays.toString(gameData));
         System.out.println(Arrays.deepToString(gameData));
 
@@ -19,20 +19,22 @@ public class Engine {
         for (int j = 0; j < Engine.ROUNDS; j++) {
             System.out.println("Question: " + gameData[questionArray][j]);
 
-            Scanner scanner = new Scanner(System.in);
+
             String userAnswer = scanner.nextLine();
             if (gameData[answerArray][j].equals(userAnswer)) {
                 System.out.println("Your answer: " + userAnswer);
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + gameData[answerArray][j] + "'");
-                System.out.println("Let's try again, " + "XXX" + "!");
+                String userName = scanner.next();
+                System.out.println("Let's try again, " + userName + "!");
                 System.exit(0);
             }
 
 
         }
-        System.out.println("Congratulations, " + "XXX" + "!");
+        String userName = scanner.next();
+        System.out.println("Congratulations, " + userName + "!");
     }
 }
 
