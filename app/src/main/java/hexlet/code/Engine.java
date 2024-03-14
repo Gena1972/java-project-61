@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import java.util.Arrays;
+// DEBUG import java.util.Arrays;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class Engine {
         int answerArray = 1;
         Scanner scanner = new Scanner(System.in);
 
-       System.out.println(Arrays.deepToString(gameData));
+      //DEBUG  System.out.println(Arrays.deepToString(gameData));
 
         System.out.println(description);
         for (int j = 0; j < Engine.ROUNDS; j++) {
