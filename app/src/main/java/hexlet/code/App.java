@@ -5,6 +5,7 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
+
 import java.util.Scanner;
 
 
@@ -16,6 +17,7 @@ public class App {
     public static final int PROGRESSION_ID = 5;
     public static final int PRIME_ID = 6;
     public static final int EXIT_ID = 0;
+
     public static void main(String[] args) {
 
         System.out.println("Please enter the game number and press Enter.");
@@ -30,23 +32,28 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int userChoice = scanner.nextInt();
         System.out.println("Your choice: " + userChoice);
-        // scanner.close();
 
-        Cli.greet();
-          if (userChoice == EXIT_ID) {
+        if (userChoice == EXIT_ID) {
             System.out.println("Exit");
         } else if (userChoice == GREET_ID) {
-            } else if (userChoice == EVEN_ID) {
+            Cli.greet();
+        } else if (userChoice == EVEN_ID) {
+            Cli.greet();
             Even.play();
         } else if (userChoice == CALC_ID) {
-          Calc.play();
+            Cli.greet();
+            Calc.play();
         } else if (userChoice == GCD_ID) {
-           GCD.play();
+            Cli.greet();
+            GCD.play();
         } else if (userChoice == PROGRESSION_ID) {
+            Cli.greet();
             Progression.play();
         } else if (userChoice == PRIME_ID) {
-          Prime.play();
+            Cli.greet();
+            Prime.play();
         }
     }
+
 
 }
