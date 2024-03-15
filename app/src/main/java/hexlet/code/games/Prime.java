@@ -1,39 +1,34 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 import java.util.Random;
 
 public class Prime {
-    public static final int MAXVALUE = 100;
+    public static final int MAX_VALUE = 100;
+    public static final int MIN_VALUE = 1;
 
     public static void play() {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] primeData;
-        primeData = primePrepData();
+        String[][] primeData = primePrepData();
         Engine.engine(description, primeData);
 
     }
 
     public static String[][] primePrepData() {
-        int randValue;
         String[][] primeData = new String[2][Engine.ROUNDS];
         int questionArray = 0;
         int answerArray = 1;
         for (int j = 0; j < Engine.ROUNDS; j++) {
-            randValue = genRandValue(MAXVALUE);
+            int randValue = Utils.generateNumber(MIN_VALUE,MAX_VALUE);
             primeData[questionArray][j] = "" + randValue;
             primeData[answerArray][j] = calculateResult(randValue);
         }
         return primeData;
     }
 
-
-    public static int genRandValue(int maxValue) {
-        Random random = new Random();
-        return random.nextInt(maxValue);
-    }
 
     private static String calculateResult(int randValue) {
         if (randValue < 2) {

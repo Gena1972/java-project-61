@@ -9,16 +9,15 @@ import java.util.Scanner;
 
 
 public class App {
-    public static final int GREETID = 1;
-    public static final int EVENID = 2;
-    public static final int CALCID = 3;
-    public static final int GCDID = 4;
-    public static final int PROGRESSIONID = 5;
-    public static final int PRIMEID = 6;
-    public static final int EXITID = 0;
+    public static final int GREET_ID = 1;
+    public static final int EVEN_ID = 2;
+    public static final int CALC_ID = 3;
+    public static final int GCD_ID = 4;
+    public static final int PROGRESSION_ID = 5;
+    public static final int PRIME_ID = 6;
+    public static final int EXIT_ID = 0;
     public static void main(String[] args) {
 
-        int userChoice;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -28,34 +27,26 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
+        Scanner scanner = new Scanner(System.in);
+        int userChoice = scanner.nextInt();
+        System.out.println("Your choice: " + userChoice);
+        // scanner.close();
 
-        userChoice = getUserChoice();
-        if (userChoice == EXITID) {
+        Cli.greet();
+          if (userChoice == EXIT_ID) {
             System.out.println("Exit");
-        } else if (userChoice == GREETID) {
-            Cli.greet();
-        } else if (userChoice == EVENID) {
-            Cli.greet();
+        } else if (userChoice == GREET_ID) {
+            } else if (userChoice == EVEN_ID) {
             Even.play();
-        } else if (userChoice == CALCID) {
-            Cli.greet();
-            Calc.play();
-        } else if (userChoice == GCDID) {
-            Cli.greet();
-            GCD.play();
-        } else if (userChoice == PROGRESSIONID) {
-            Cli.greet();
+        } else if (userChoice == CALC_ID) {
+          Calc.play();
+        } else if (userChoice == GCD_ID) {
+           GCD.play();
+        } else if (userChoice == PROGRESSION_ID) {
             Progression.play();
-        } else if (userChoice == PRIMEID) {
-            Cli.greet();
-            Prime.play();
+        } else if (userChoice == PRIME_ID) {
+          Prime.play();
         }
     }
-    public static int getUserChoice() {
-        Scanner scanner = new Scanner(System.in);
-        int userValue = scanner.nextInt();
-        System.out.println("Your choice: " + userValue);
-        // scanner.close();
-        return userValue;
-    }
+
 }
