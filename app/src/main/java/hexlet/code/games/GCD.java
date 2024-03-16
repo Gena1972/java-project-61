@@ -17,6 +17,20 @@ public class GCD {
     }
 
     public static String[][] gcdPrepData() {
+        String[][] gcdData = new String[Engine.ROUNDS][2];
+        int questionArray = 0;
+        int answerArray = 1;
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            int randValue1 = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int randValue2 = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+
+            gcdData[i][questionArray] = "" + randValue1 + " " + randValue2;
+            gcdData[i][answerArray] = "" + gcd(randValue1, randValue2);
+
+        }
+        return gcdData;
+    }
+   /* public static String[][] gcdPrepData() {
 
         String[][] gcdData = new String[2][Engine.ROUNDS];
         int questionArray = 0;
@@ -29,7 +43,7 @@ public class GCD {
             gcdData[answerArray][j] = "" + gcd(randValue1, randValue2);
         }
         return gcdData;
-    }
+    }*/
 
 
     public static int gcd(int randValue1, int randValue2) {

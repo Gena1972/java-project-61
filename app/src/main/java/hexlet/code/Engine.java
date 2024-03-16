@@ -1,6 +1,6 @@
 package hexlet.code;
 
-// DEBUG import java.util.Arrays;
+//DEBUG import java.util.Arrays;
 
 import java.util.Scanner;
 
@@ -13,19 +13,17 @@ public class Engine {
         int answerArray = 1;
         Scanner scanner = new Scanner(System.in);
 
-      //DEBUG  System.out.println(Arrays.deepToString(gameData));
+  //DEBUG     System.out.println(Arrays.deepToString(gameData));
 
         System.out.println(description);
-        for (int j = 0; j < Engine.ROUNDS; j++) {
-            System.out.println("Question: " + gameData[questionArray][j]);
-
-
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            System.out.println("Question: " + gameData[i][questionArray]);
             String userAnswer = scanner.nextLine();
-            if (gameData[answerArray][j].equals(userAnswer)) {
+            if (gameData[i][answerArray].equals(userAnswer)) {
                 System.out.println("Your answer: " + userAnswer);
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + gameData[answerArray][j] + "'");
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + gameData[i][answerArray]+ "'");
                 String userName = scanner.next();
                 System.out.println("Let's try again, " + userName + "!");
                 return;
