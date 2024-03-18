@@ -36,6 +36,7 @@ public class App {
         if (userChoice == EXIT_ID) {
             System.out.println("Exit");
         } else if (userChoice == GREET_ID) {
+            Cli.greet();
         } else if (userChoice == EVEN_ID) {
             Even.play();
         } else if (userChoice == CALC_ID) {
