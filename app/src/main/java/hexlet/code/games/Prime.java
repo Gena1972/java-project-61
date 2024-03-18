@@ -27,17 +27,6 @@ public class Prime {
         }
         return primeData;
     }
-  /*  public static String[][] primePrepData() {
-        String[][] primeData = new String[2][Engine.ROUNDS];
-        int questionArray = 0;
-        int answerArray = 1;
-        for (int j = 0; j < Engine.ROUNDS; j++) {
-           int randValue = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            primeData[questionArray][j] = "" + randValue;
-            primeData[answerArray][j] = isPrime(randValue) ? "yes" : "no";
-        }
-        return primeData;
-    }*/
 
     private static boolean isPrime(int randValue) {
         if (randValue < 2) {

@@ -39,28 +39,6 @@ public class Progression {
         return progressionData;
     }
 
-   /* public static String[][] progressionPrepData() {
-
-        String[][] progressionData = new String[2][Engine.ROUNDS];
-
-        int questionArray = 0;
-        int answerArray = 1;
-
-        for (int j = 0; j < Engine.ROUNDS; j++) {
-
-            int firstValue = Utils.generateNumber(MIN_FIRST_VALUE, MAX_FIRST_VALUE);
-            int stepValue = Utils.generateNumber(MIN_STEP_VALUE, MAX_STEP_VALUE);
-            int hiddenNumber = Utils.generateNumber(MIN_HIDDEN_VALUE, MAX_HIDDEN_VALUE);
-            String[]arithSequence = createArithSequence(firstValue, stepValue, SEQUENCE_LENGTH);
-            String result = arithSequence[hiddenNumber];
-            arithSequence[hiddenNumber] = "..";
-            progressionData[questionArray][j] = String.join(" ", arithSequence);
-            progressionData[answerArray][j] = result;
-
-        }
-        return progressionData;
-    }*/
-
 
     public static String[] createArithSequence(int firstValue, int stepSequence, int sequenceLength) {
         String[] arithSequence = new String[sequenceLength];

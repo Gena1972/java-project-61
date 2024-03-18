@@ -36,21 +36,15 @@ public class App {
         if (userChoice == EXIT_ID) {
             System.out.println("Exit");
         } else if (userChoice == GREET_ID) {
-            Cli.greet();
         } else if (userChoice == EVEN_ID) {
-            Cli.greet();
             Even.play();
         } else if (userChoice == CALC_ID) {
-            Cli.greet();
             Calc.play();
         } else if (userChoice == GCD_ID) {
-            Cli.greet();
             GCD.play();
         } else if (userChoice == PROGRESSION_ID) {
-            Cli.greet();
             Progression.play();
         } else if (userChoice == PRIME_ID) {
-            Cli.greet();
             Prime.play();
         }
     }
