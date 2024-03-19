@@ -23,8 +23,8 @@ public class Engine {
                 System.out.println("Your answer: " + userAnswer);
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + line[1] + "'");
-
+                System.out.print("'" + userAnswer + "'" + " is wrong answer ;(. ");
+                System.out.println("Correct answer was " + "'" + line[1] + "'");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }

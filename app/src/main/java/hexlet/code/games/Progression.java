@@ -39,7 +39,8 @@ public class Progression {
         String[] arithSequence = new String[sequenceLength];
         arithSequence[0] = "" + firstValue;
         for (int i = 1; i < sequenceLength; i++) {
-            arithSequence[i] = Integer.toString(firstValue += stepSequence);
+            firstValue += stepSequence;
+            arithSequence[i] = "" + (firstValue);
         }
         return arithSequence;
     }
