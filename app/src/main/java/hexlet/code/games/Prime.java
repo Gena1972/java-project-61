@@ -1,10 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import hexlet.code.Utils;
-
-
 public class Prime {
     public static final int MAX_VALUE = 100;
     public static final int MIN_VALUE = 1;
@@ -13,7 +10,6 @@ public class Prime {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] primeData = primePrepData();
         Engine.engine(description, primeData);
-
     }
 
     public static String[][] primePrepData() {

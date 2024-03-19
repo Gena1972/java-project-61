@@ -5,9 +5,7 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
-
 import java.util.Scanner;
-
 
 public class App {
     public static final int GREET_ID = 1;
@@ -19,7 +17,6 @@ public class App {
     public static final int EXIT_ID = 0;
 
     public static void main(String[] args) {
-
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -49,6 +46,4 @@ public class App {
             Prime.play();
         }
     }
-
-
 }

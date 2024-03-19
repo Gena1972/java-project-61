@@ -1,11 +1,7 @@
 package hexlet.code.games;
 
-
 import hexlet.code.Engine;
-
-
 import hexlet.code.Utils;
-
 public class Progression {
     public static final int MAX_FIRST_VALUE = 15;
     public static final int MIN_FIRST_VALUE = 1;
@@ -39,12 +35,11 @@ public class Progression {
         return progressionData;
     }
 
-
     public static String[] createArithSequence(int firstValue, int stepSequence, int sequenceLength) {
         String[] arithSequence = new String[sequenceLength];
         arithSequence[0] = "" + firstValue;
         for (int i = 1; i < sequenceLength; i++) {
-            arithSequence[i] = "" + (firstValue += stepSequence);
+            arithSequence[i] = Integer.toString(firstValue += stepSequence);
         }
         return arithSequence;
     }

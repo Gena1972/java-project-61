@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-
 public class Even {
     public static final int MAX_VALUE = 100;
     public static final int MIN_VALUE = 1;
@@ -11,7 +10,6 @@ public class Even {
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] evenData = evenPrepData();
         Engine.engine(description, evenData);
-
     }
 
     public static String[][] evenPrepData() {
@@ -25,8 +23,8 @@ public class Even {
         }
         return evenData;
     }
-
     private static boolean isEven(int randValue) {
+
         return (randValue % 2) == 0;
     }
 }
